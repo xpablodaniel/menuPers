@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Menu</title>
+    <link rel="stylesheet" href="adminMenu.css">
+    <link rel="icon" type="image/jpeg" href="logoSuteba.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;600&display=swap">
+</head>
+<body>
+    <header>
+        <div class="headImages">
+            <div class="rightIma"><img src="logoSuteba.jpg" alt="Logo Suteba"></div>
+        </div>
+        <h1>Administrador de menu</h1>
+        <p class="subtitle">Editar y guardar el JSON del menu.</p>
+    </header>
+    <main>
+        <section class="editor-card">
+            <div class="actions">
+                <button id="load-button" type="button">Cargar menu</button>
+                <button id="save-button" type="button">Guardar cambios</button>
+            </div>
+            <label class="sr-only" for="menu-json">JSON del menu</label>
+            <textarea id="menu-json" spellcheck="false" placeholder="Cargando..."></textarea>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+    <script src="adminMenu.js"></script>
+</body>
+</html>

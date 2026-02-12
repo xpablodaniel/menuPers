@@ -1,6 +1,11 @@
 function cargarMenuDesdeJSON(url) {
     return fetch(url)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status} al cargar ${url}`);
+            }
+            return response.json();
+        })
         .then(data => {
             if (!data.entrada && !data.principal && !data.postre) {
                 throw new Error("El archivo JSON no tiene la estructura esperada.");
@@ -8,6 +13,9 @@ function cargarMenuDesdeJSON(url) {
             return data;
         })
         .catch(error => {
+            if (window.location.protocol === 'file:') {
+                console.warn('Abriste el archivo con file://. Usa un servidor local para evitar CORS.');
+            }
             console.error('Error al cargar el menú:', error);
             return { entrada: [], principal: [], postre: [] };
         });
@@ -16,6 +24,7 @@ function cargarMenuDesdeJSON(url) {
 function llenarSelectConOpciones(selectElement, opciones, subMenuElement, dataCompleta) {
     selectElement.innerHTML = '';
     subMenuElement.innerHTML = '';
+    const containerDiv = subMenuElement.closest('div');
 
     opciones.forEach(opcion => {
         const option = document.createElement('option');
@@ -33,31 +42,40 @@ function llenarSelectConOpciones(selectElement, opciones, subMenuElement, dataCo
         selectElement.appendChild(option);
     });
 
-    selectElement.addEventListener('change', (event) => {
+    const updateSubmenu = (selectedOption) => {
+        if (!selectedOption) {
+            subMenuElement.innerHTML = '';
+            if (containerDiv) containerDiv.style.display = 'none';
+            return;
+        }
+
+        let submenu = selectedOption.submenu;
+        if (!submenu && selectedOption.submenu_ref) {
+            submenu = dataCompleta[selectedOption.submenu_ref] || [];
+        }
+
+        if (submenu && submenu.length > 0) {
+            subMenuElement.innerHTML = '';
+            submenu.forEach(subOptionText => {
+                const subOption = document.createElement('option');
+                subOption.textContent = subOptionText;
+                subMenuElement.appendChild(subOption);
+            });
+            if (containerDiv) containerDiv.style.display = 'block';
+        } else {
+            subMenuElement.innerHTML = '';
+            if (containerDiv) containerDiv.style.display = 'none';
+        }
+    };
+
+    selectElement.onchange = (event) => {
         const selectedValue = event.target.value;
         const selectedOption = opciones.find(op => op.nombre === selectedValue);
-        const containerDiv = subMenuElement.closest('div');
+        updateSubmenu(selectedOption);
+    };
 
-        if (selectedOption) {
-            let submenu = selectedOption.submenu;
-            if (!submenu && selectedOption.submenu_ref) {
-                submenu = dataCompleta[selectedOption.submenu_ref] || [];
-            }
-
-            if (submenu && submenu.length > 0) {
-                subMenuElement.innerHTML = '';
-                submenu.forEach(subOptionText => {
-                    const subOption = document.createElement('option');
-                    subOption.textContent = subOptionText;
-                    subMenuElement.appendChild(subOption);
-                });
-                if (containerDiv) containerDiv.style.display = 'block';
-            } else {
-                subMenuElement.innerHTML = '';
-                if (containerDiv) containerDiv.style.display = 'none';
-            }
-        }
-    });
+    const initialOption = opciones.find(op => op.nombre === selectElement.value) || opciones[0];
+    updateSubmenu(initialOption);
 }
 
 function inicializarMenu() {

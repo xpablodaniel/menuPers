@@ -23,7 +23,9 @@
   "entrada": [
     {
       "nombre": "Bastones de Muzzarella Rebozados",
-      "submenu": []
+      "submenu": [
+        "con Salsa Alexander"
+      ]
     },
     {
       "nombre": "Bruschetta Mediterránea",
@@ -156,7 +158,7 @@
       ]
     },
     {
-      "nombre": "Milanesa de Peceto",
+      "nombre": "Milanesa de Ternera",
       "submenu_ref": "acompanamientos_carnicos"
     },
     {
@@ -169,7 +171,7 @@
     },
     {
       "nombre": "Pastel de Papa y Carne",
-      "submenu": [ ]
+      "submenu": []
     },
     {
       "nombre": "Pechugas al Puerro y Queso Azul",
@@ -221,6 +223,15 @@
     {
       "nombre": "Tapa de Asado Braseada",
       "submenu_ref": "acompanamientos_carnicos"
+    },
+    {
+      "nombre": "Tallarines",
+      "submenu": [
+        "--",
+        "Salsa de Tomate",
+        "Salsa Blanca",
+        "Salsa Mixta"
+      ]
     },
     {
       "nombre": "Tallarines a la Parisienne",
