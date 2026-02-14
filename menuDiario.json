@@ -1,0 +1,116 @@
+{
+  "dias": {
+    "1": {
+      "almuerzo": {
+        "entrada": [],
+        "principal": [],
+        "postre": []
+      },
+      "cena": {
+        "entrada": [
+          {"nombre": "Ensalada Lucho's Cheff", "submenu": []}
+        ],
+        "principal": [
+          {"nombre": "Crepe de Ternera Desmechada en Salsa de Puerros", "submenu": []}
+        ],
+        "postre": [
+          {"nombre": "Brownie", "submenu_ref": "acompanamientos_postres"}
+        ]
+      }
+    },
+    "2": {
+      "almuerzo": {
+        "entrada": [
+          {"nombre": "Muzzarellitas Panadas", "submenu": ["con Salsa Alexander"]}
+        ],
+        "principal": [
+          {"nombre": "Muslitos Deshuesados al Ajillo", "submenu_ref": "acompanamientos_carnicos"}
+        ],
+        "postre": [
+          {"nombre": "Helado Almendrado", "submenu": []}
+        ]
+      },
+      "cena": {
+        "entrada": [
+          {"nombre": "Ensalada Caesar con Pollo", "submenu": []}
+        ],
+        "principal": [
+          {"nombre": "Milanesa de Peceto Napolitana", "submenu_ref": "acompanamientos_carnicos"}
+        ],
+        "postre": [
+          {"nombre": "Bombón Suizo", "submenu_ref": "acompanamientos_postres"}
+        ]
+      }
+    },
+    "3": {
+      "almuerzo": {
+        "entrada": [
+          {"nombre": "Ensalada Caprese", "submenu": []}
+        ],
+        "principal": [
+          {"nombre": "Bondiola Braseada", "submenu_ref": "acompanamientos_carnicos"}
+        ],
+        "postre": [
+          {"nombre": "Budín de Pan", "submenu_ref": "acompanamientos_postres"}
+        ]
+      },
+      "cena": {
+        "entrada": [
+          {"nombre": "Empanada Criolla", "submenu": []}
+        ],
+        "principal": [
+          {"nombre": "Suprema de Pollo", "submenu_ref": "acompanamientos_carnicos"}
+        ],
+        "postre": [
+          {"nombre": "Helado Tricolor", "submenu": []}
+        ]
+      }
+    },
+    "4": {
+      "almuerzo": {
+        "entrada": [
+          {"nombre": "Bruschetta Mediterránea", "submenu": []}
+        ],
+        "principal": [
+          {"nombre": "Tallarines a la Parisienne", "submenu": []}
+        ],
+        "postre": [
+          {"nombre": "Crumble de Manzana", "submenu_ref": "acompanamientos_postres"}
+        ]
+      },
+      "cena": {
+        "entrada": [
+          {"nombre": "Papas Cheddar", "submenu": []}
+        ],
+        "principal": [
+          {"nombre": "Carne al Horno Braseada", "submenu_ref": "acompanamientos_carnicos"}
+        ],
+        "postre": [
+          {"nombre": "Mousse de Chocolate", "submenu_ref": "acompanamientos_postres"}
+        ]
+      }
+    }
+  },
+  "acompanamientos_carnicos": [
+    "con Ensalada del Chef",
+    "con Puré de Batatas",
+    "con Puré de Papas",
+    "con Arroz Pilaf",
+    "con Papas Fritas",
+    "con Verduras Asadas",
+    "con Ensalada Mixta"
+  ],
+  "salsas_pastas": [
+    "Salsa de Tomate",
+    "Salsa Blanca",
+    "Salsa Mixta"
+  ],
+  "acompanamientos_postres": [
+    "con Crema",
+    "con Dulce de Leche",
+    "con Helado",
+    "con Helado y Nueces Garrapiñadas",
+    "con Salsa de Chocolate",
+    "con Salsa de Frutos Rojos"
+  ]
+}

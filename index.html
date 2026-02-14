@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menús SUTEBA - Sistema de Gestión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-initial {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-initial img {
+            width: 100px;
+            height: auto;
+        }
+
+        .h1-initial {
+            text-align: center;
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .h2-initial {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .menu-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-card .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .menu-card h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .menu-card p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .menu-button {
+            padding: 14px 28px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+
+        .menu-button.secondary {
+            background-color: #28a745;
+        }
+
+        .menu-button.secondary:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-card {
+                padding: 30px 20px;
+                max-width: 90%;
+            }
+
+            .h1-initial {
+                font-size: 24px;
+            }
+
+            .menu-card h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-initial">
+            <img src="logoSuteba.jpg" alt="Logo SUTEBA">
+        </div>
+        <h1 class="h1-initial">Sistema de Gestión de Menús</h1>
+        <h2 class="h2-initial">SUTEBA - Unión de Trabajadores de la Educación</h2>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-card" onclick="window.location.href='indexMenuPers.html'">
+            <div class="icon">🍽️</div>
+            <h2>Menú Pensión Completa</h2>
+            <p>Crea tu menú personalizado con entrada, plato principal y postre. Ideal para comidas individuales o eventos especiales.</p>
+            <a href="indexMenuPers.html" class="menu-button">Acceder</a>
+        </div>
+
+        <div class="menu-card" onclick="window.location.href='menuDiario.html'">
+            <div class="icon">📅</div>
+            <h2>Menú Diario Jubilados</h2>
+            <p>Planifica menús de almuerzo y cena para programas de jubilados. Gestiona múltiples días con selección independiente.</p>
+            <a href="menuDiario.html" class="menu-button secondary">Acceder</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Sistema de gestión de menús - SUTEBA © 2026</p>
+    </footer>
+</body>
+</html>

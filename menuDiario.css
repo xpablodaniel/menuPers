@@ -20,12 +20,33 @@ body {
     align-items: center;
 }
 
+.top-nav {
+    width: 100%;
+    padding: 12px 20px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
 header {
     max-width: 680px;
-    margin: 50px auto 0;
+    margin: 20px auto 0;
     text-align: center;
     padding: 0 20px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .headImages {
@@ -43,30 +64,41 @@ header {
 }
 
 h1 {
-    font-size: clamp(2.6rem, 4vw + 1rem, 3.6rem);
+    font-size: clamp(1.82rem, 2.8vw + 0.7rem, 2.52rem);
     margin: 0 0 10px;
+    padding: 0;
     font-weight: 700;
     font-style: italic;
     text-decoration: underline;
     text-underline-offset: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
-.top-nav {
-    width: 100%;
-    padding: 12px 20px;
-    background: #f8f8f8;
-    border-bottom: 1px solid #ddd;
+.day-selector {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
 }
 
-.nav-link {
+#dia-select {
+    font-size: inherit;
+    padding: 4px 8px;
+    border: none;
+    background-color: transparent;
     color: var(--ink);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    cursor: pointer;
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+#dia-select:focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
 }
 
 main {
@@ -76,7 +108,23 @@ main {
     width: min(680px, 100% - 32px);
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 40px;
+}
+
+.meal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.meal-title {
+    font-size: clamp(1.8rem, 2.5vw + 1rem, 2.4rem);
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    text-align: center;
 }
 
 section {
@@ -84,17 +132,16 @@ section {
     border: none;
     padding: 0;
     text-align: center;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
-h2 {
-    font-size: clamp(2rem, 3vw + 1rem, 2.7rem);
-    margin: 10px 0 8px;
-    font-weight: 700;
-    font-style: italic;
-    text-decoration: underline;
-    text-underline-offset: 0.1em;
-    text-transform: uppercase;
+h3 {
+    font-size: clamp(1.3rem, 2vw + 0.6rem, 1.8rem);
+    margin: 6px 0 6px;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
 }
 
 label {
@@ -107,16 +154,17 @@ label {
 
 select {
     width: 100%;
-    font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem);
+    font-size: clamp(1.2rem, 1.8vw + 0.6rem, 1.6rem);
     padding: 6px 8px;
     border: none;
     background-color: transparent;
     color: var(--ink);
     appearance: none;
-    font-weight: 700;
-    font-style: italic;
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
     text-align-last: center;
+    line-height: 1.5;
 }
 
 option {
@@ -130,14 +178,14 @@ select:focus-visible {
 
 .custom-input {
     width: 100%;
-    font-size: clamp(1.3rem, 1.6vw + 0.8rem, 2rem);
+    font-size: clamp(1rem, 1.4vw + 0.5rem, 1.4rem);
     padding: 4px 8px 6px;
     border: none;
     background-color: transparent;
     color: var(--ink);
     text-align: center;
-    font-weight: 700;
-    font-style: italic;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .custom-input::placeholder {
@@ -197,10 +245,6 @@ footer {
     border-width: 0;
 }
 
-.has-submenu::after {
-    content: " ▼";
-}
-
 @media (max-width: 700px) {
     header,
     main {
@@ -212,51 +256,92 @@ footer {
     }
 
     section {
-        margin: 8px 0;
+        margin: 14px 0 18px;
+    }
+
+    .meal-section {
+        gap: 18px;
+    }
+
+    main {
+        gap: 32px;
     }
 }
 
 @media print {
     @page {
-        size: auto;
-        margin: 20mm;
+        size: 21cm 29.7cm;
+        margin: 15mm 15mm 10mm 15mm;
     }
 
     body {
         background: #fff;
     }
 
+    .top-nav {
+        display: none;
+    }
+
     main {
         padding: 0;
-        gap: 16px;
+        gap: 10px;
+        margin: 4px auto 8px;
     }
 
     header {
-        margin-top: 12px;
+        margin-top: 2px;
+    }
+
+    .headImages {
+        margin-bottom: 2px;
+    }
+
+    .rightIma img {
+        height: 48px;
     }
 
     h1 {
-        font-size: 2.6rem;
-        margin-bottom: 6px;
+        font-size: 2rem;
+        margin: 0;
     }
 
-    h2 {
-        font-size: 2rem;
-        margin: 6px 0 4px;
+    .day-selector {
+        margin: 0;
+    }
+
+    #dia-select {
+        font-size: inherit;
+        padding: 1px 4px;
+        font-style: italic;
+    }
+
+    .meal-title {
+        font-size: 1.3rem;
+        margin: 4px 0 4px;
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 2px 0 2px;
     }
 
     section {
-        margin: 6px 0;
+        margin: 3px 0;
+    }
+
+    .meal-section {
+        gap: 8px;
     }
 
     select {
-        font-size: 1.7rem;
-        padding: 4px 6px;
+        font-size: 0.95rem;
+        padding: 2px 4px;
+        line-height: 1.3;
     }
 
     .custom-input {
-        font-size: 1.4rem;
-        padding: 2px 6px 4px;
+        font-size: 0.85rem;
+        padding: 1px 4px 2px;
     }
 
     select,
@@ -268,10 +353,6 @@ footer {
 
     .custom-input::placeholder {
         color: transparent;
-    }
-
-    .top-nav {
-        display: none;
     }
 
     .print-button {

@@ -1,6 +1,5 @@
 {
   "acompanamientos_carnicos": [
-    "--",
     "con Ensalada del Chef",
     "con Puré de Batatas",
     "con Puré de Papas",
@@ -23,9 +22,7 @@
   "entrada": [
     {
       "nombre": "Bastones de Muzzarella Rebozados",
-      "submenu": [
-        "con Salsa Alexander"
-      ]
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Bruschetta Mediterránea",
@@ -49,7 +46,7 @@
     },
     {
       "nombre": "Ensalada Caesar",
-      "submenu": []
+      "submenu": ["con Pollo", "con Atún"]
     },
     {
       "nombre": "Ensalada Capresse",
@@ -89,12 +86,9 @@
     },
     {
       "nombre": "Quesadillas",
-      "submenu": []
+      "submenu": ["con Pico de Gallo", "con Guacamole"]
     },
-    {
-      "nombre": "Quesadillas con Pico de Gallo",
-      "submenu": []
-    },
+    
     {
       "nombre": "Quiché de Calabaza y Muzzarella",
       "submenu": []
@@ -143,19 +137,11 @@
     },
     {
       "nombre": "Lasagna de Berenjenas",
-      "submenu": [
-        "--",
-        "Salsa Bechamel",
-        "Salsa de Tomate y Queso"
-      ]
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Lasagna de Carne y Verduras",
-      "submenu": [
-        "--",
-        "Salsa Bechamel",
-        "Salsa de Tomate y Carne"
-      ]
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Milanesa de Ternera",
@@ -187,30 +173,15 @@
     },
     {
       "nombre": "Ravioli de Espinaca Mediterráneo",
-      "submenu": [
-        "--",
-        "Salsa de Tomate",
-        "Salsa Blanca",
-        "Salsa Mixta"
-      ]
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Ravioli de Verdura",
-      "submenu": [
-        "--",
-        "Salsa de Tomate",
-        "Salsa Blanca",
-        "Salsa Mixta"
-      ]
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Raviolon de Espinaca y Ricota",
-      "submenu": [
-        "--",
-        "Salsa de Tomate",
-        "Salsa Blanca",
-        "Salsa Mixta"
-      ]
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Suprema de Pollo",
@@ -226,32 +197,27 @@
     },
     {
       "nombre": "Tallarines",
-      "submenu": [
-        "--",
-        "Salsa de Tomate",
-        "Salsa Blanca",
-        "Salsa Mixta"
-      ]
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Tallarines a la Parisienne",
-      "submenu": []
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Tallarines al Pesto",
-      "submenu": []
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Tallarines al Pesto de Albahaca",
-      "submenu": []
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Tallarines con Salsa Alfredo",
-      "submenu": []
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Tallarines Mediterráneo",
-      "submenu": []
+      "submenu_ref": "salsas_pastas"
     },
     {
       "nombre": "Vacío al Horno",
@@ -265,95 +231,86 @@
   "postre": [
     {
       "nombre": "Bombón Suizo",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Brownie de Chocolate",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Compota de Manzanas",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Copa Helada Suteba",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Crepe de Frutas",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Crepe de Manzanas y Canela",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Crumble de Manzana",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Duraznos en Almibar",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Ensalada de Frutas",
-      "submenu": [
-        "--",
-        "con Helado"
-      ]
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Flan con Crema",
-      "submenu": [
-        "--",
-        "y Dulce de Leche"
-      ]
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Flan de Naranja",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Helado Almendrado",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Helado de Americana",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Helado de Chocolate",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Helado Tricolor",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Manzanas Asadas",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Mousse de Chocolate",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Queso y Dulce",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Tiramisú",
-      "submenu": []
+      "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Budín de Pan",
-      "submenu": [
-        "--",
-        "con Crema"
-      ]
+      "submenu_ref": "acompanamientos_postres"
     }
   ],
-  "submenu_general": [
+  "acompanamientos_postres": [
     "con Crema y Canela",
     "con Crema",
     "con Dulce de Leche",
@@ -369,5 +326,15 @@
     "y Crema de Arándanos",
     "y Crema de Caramelo",
     "y Crema de Limón"
+  ],
+  "salsas_pastas": [
+    "con Salsa Bechamel",
+    "con Salsa de Tomate y Queso",
+    "con Salsa de Tomate y Carne",
+    "con Salsa de Tomate",
+    "con Salsa Blanca",
+    "con Salsa Mixta",
+    "con Salsa Bolognesa",
+    "con Salsa Alexander"
   ]
 }

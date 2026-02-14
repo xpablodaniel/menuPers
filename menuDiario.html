@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Diario - Almuerzo y Cena</title>
+    <link rel="stylesheet" href="menuDiario.css">
+    <link rel="icon" type="image/jpeg" href="logoSuteba.jpg">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="nav-link">⬅️ Volver al Menú Principal</a>
+    </nav>
+    <header>
+        <div class="headImages">
+            <div class="rightIma"><img src="logoSuteba.jpg" alt="Logo Suteba"></div>
+        </div>
+        <h1>
+            Menu Jubis Día:
+            <span class="day-selector">
+                <select id="dia-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </span>
+        </h1>
+    </header>
+    <main>
+        <div class="meal-section almuerzo-section">
+            <h2 class="meal-title">Almuerzo</h2>
+            <section class="almuerzo-entrada">
+                <h3>Entrada</h3>
+                <label for="almuerzo-entrada-select" class="sr-only">Seleccione la entrada del almuerzo:</label>
+                <select id="almuerzo-entrada-select"></select>
+                <div id="almuerzo-entrada-submenu-container" style="display:none;">
+                    <label for="almuerzo-entrada-submenu" class="sr-only">Submenú de entrada:</label>
+                    <select id="almuerzo-entrada-submenu"></select>
+                </div>
+                <input id="almuerzo-entrada-nota" class="custom-input" type="text" placeholder="Notas adicionales" autocomplete="off">
+            </section>
+            <section class="almuerzo-principal">
+                <h3>Plato Principal</h3>
+                <label for="almuerzo-principal-select" class="sr-only">Seleccione el plato principal del almuerzo:</label>
+                <select id="almuerzo-principal-select"></select>
+                <div id="almuerzo-principal-submenu-container" style="display:none;">
+                    <label for="almuerzo-principal-submenu" class="sr-only">Submenú del plato principal:</label>
+                    <select id="almuerzo-principal-submenu"></select>
+                </div>
+                <input id="almuerzo-principal-nota" class="custom-input" type="text" placeholder="Notas adicionales" autocomplete="off">
+            </section>
+            <section class="almuerzo-postre">
+                <h3>Postre</h3>
+                <label for="almuerzo-postre-select" class="sr-only">Seleccione el postre del almuerzo:</label>
+                <select id="almuerzo-postre-select"></select>
+                <div id="almuerzo-postre-submenu-container" style="display:none;">
+                    <label for="almuerzo-postre-submenu" class="sr-only">Submenú del postre:</label>
+                    <select id="almuerzo-postre-submenu"></select>
+                </div>
+                <input id="almuerzo-postre-nota" class="custom-input" type="text" placeholder="Notas adicionales" autocomplete="off">
+            </section>
+        </div>
+        
+        <div class="meal-section cena-section">
+            <h2 class="meal-title">Cena</h2>
+            <section class="cena-entrada">
+                <h3>Entrada</h3>
+                <label for="cena-entrada-select" class="sr-only">Seleccione la entrada de la cena:</label>
+                <select id="cena-entrada-select"></select>
+                <div id="cena-entrada-submenu-container" style="display:none;">
+                    <label for="cena-entrada-submenu" class="sr-only">Submenú de entrada:</label>
+                    <select id="cena-entrada-submenu"></select>
+                </div>
+                <input id="cena-entrada-nota" class="custom-input" type="text" placeholder="Notas adicionales" autocomplete="off">
+            </section>
+            <section class="cena-principal">
+                <h3>Plato Principal</h3>
+                <label for="cena-principal-select" class="sr-only">Seleccione el plato principal de la cena:</label>
+                <select id="cena-principal-select"></select>
+                <div id="cena-principal-submenu-container" style="display:none;">
+                    <label for="cena-principal-submenu" class="sr-only">Submenú del plato principal:</label>
+                    <select id="cena-principal-submenu"></select>
+                </div>
+                <input id="cena-principal-nota" class="custom-input" type="text" placeholder="Notas adicionales" autocomplete="off">
+            </section>
+            <section class="cena-postre">
+                <h3>Postre</h3>
+                <label for="cena-postre-select" class="sr-only">Seleccione el postre de la cena:</label>
+                <select id="cena-postre-select"></select>
+                <div id="cena-postre-submenu-container" style="display:none;">
+                    <label for="cena-postre-submenu" class="sr-only">Submenú del postre:</label>
+                    <select id="cena-postre-submenu"></select>
+                </div>
+                <input id="cena-postre-nota" class="custom-input" type="text" placeholder="Notas adicionales" autocomplete="off">
+            </section>
+        </div>
+    </main>
+    <button class="print-button" onclick="window.print()" aria-label="Imprimir menú">
+        <span class="print-icon" aria-hidden="true">🖨️</span>
+    </button>
+    
+    <footer></footer>
+    <script src="menuDiario.js"></script>
+</body>
+</html>
