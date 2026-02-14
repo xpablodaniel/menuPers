@@ -1,63 +1,179 @@
-# MenuPers
+# MenuPers - Sistema de Gestión de Menús SUTEBA
 
-MenuPers es un menu del dia interactivo con entradas, plato principal y postre. Permite seleccionar opciones, agregar detalles personalizados y administrar el contenido del JSON desde un panel web.
+Sistema web interactivo para la gestión y visualización de menús diarios, diseñado para SUTEBA (Unión de Trabajadores de la Educación). Incluye dos módulos principales: menú individual de pensión completa y menú diario para programas de jubilados.
 
-## Caracteristicas
-- Carga de platos desde `menus.json`.
-- Submenus dinamicos por item.
-- Detalles personalizados por categoria.
-- Panel admin para editar y guardar el JSON.
-- Diseno centrado y listo para impresion.
+## 🎯 Finalidad del Proyecto
 
-## Requisitos
-- Python 3.
+MenuPers permite:
+- **Gestionar menús digitales** de forma dinámica con entrada, plato principal y postre
+- **Imprimir menús** en formato A4 con estilos profesionales
+- **Administrar contenido** mediante panel web sin editar código
+- **Planificar menús semanales** para programas de jubilados (almuerzo y cena)
+- **Personalizar opciones** con submenús dinámicos y detalles específicos
 
-## Desarrollo local
-El proyecto usa `fetch` para cargar `menus.json`, por lo que debe servirse por HTTP y no abrirse con `file://`.
+## ✨ Características Principales
 
-### Iniciar servidor
-Desde la carpeta del proyecto:
+### Página Principal (index.html)
+- Diseño moderno con cards de selección
+- Navegación clara entre los dos sistemas de menú
+- Interfaz responsive y profesional
 
-```bash
-python3 serve.py --port 5500
-```
+### Menú Pensión Completa (indexMenuPers.html)
+- Menú individual con 3 categorías: entrada, principal y postre
+- Submenús dinámicos según el plato seleccionado
+- Campo de detalles personalizados por categoría
+- Optimizado para impresión en A4
+- Tipografía Ubuntu con estilos serif
 
-O usando el script incluido:
+### Menú Diario Jubilados (menuDiario.html)
+- Planificación de almuerzo y cena separados
+- Selector de días (1-4) para referencia visual
+- 6 selectores independientes (3 por comida)
+- Mismo catálogo de platos que pensión completa
+- Diseño optimizado para impresión con márgenes reducidos
 
+### Panel de Administración (adminMenu.html)
+- Carga y edición del archivo `menus.json`
+- Interfaz visual para modificar platos disponibles
+- Guardar cambios mediante API REST
+- Gestión de submenús compartidos (acompañamientos, salsas, postres)
+
+## 🛠️ Tecnologías
+
+- **Frontend**: HTML5, CSS3 (con tipografía Ubuntu), JavaScript vanilla
+- **Backend**: Python 3 con servidor HTTP y API REST
+- **Datos**: JSON con estructura de submenús por referencia
+- **Impresión**: Media queries CSS optimizadas para A4
+
+## 📋 Requisitos
+
+- Python 3.x
+- Navegador web moderno (Chrome, Firefox, Edge)
+- Conexión HTTP local (no funciona con `file://`)
+
+## 🚀 Desarrollo Local
+
+El proyecto requiere servirse por HTTP para cargar `menus.json` correctamente.
+
+### Iniciar Servidor
+
+**Opción 1: Script automático**
 ```bash
 ./serve.sh
 ```
 
-Abrir en el navegador:
-
-```
-http://localhost:5500/indexMenuPers.html
-```
-
-### Panel admin
-Con el servidor en marcha, abrir:
-
-```
-http://localhost:5500/adminMenu.html
+**Opción 2: Comando directo**
+```bash
+python3 serve.py --port 5500
 ```
 
-Desde ahi podes cargar y guardar el contenido de `menus.json`.
+### Acceder a la Aplicación
 
-Nota: el admin requiere `serve.py` (el servidor basico de Python no expone `/api/menus`).
+- **Página principal**: http://localhost:5500/index.html
+- **Menú Pensión Completa**: http://localhost:5500/indexMenuPers.html
+- **Menú Diario Jubilados**: http://localhost:5500/menuDiario.html
+- **Panel Admin**: http://localhost:5500/adminMenu.html
 
-## Acceso desde otra maquina en la red (opcional)
+## 🌐 Acceso desde Otra Máquina en la Red
 
 ```bash
 python3 serve.py --host 0.0.0.0 --port 5500
 ```
 
-Reemplazar `localhost` por la IP de la maquina.
+Reemplazar `localhost` por la IP de la máquina servidor.
 
-## Estructura del proyecto
-- `indexMenuPers.html`: pagina principal del menu.
-- `indexMenu.js`: logica de carga y submenus.
-- `indexMenuPers.css`: estilos del menu.
-- `menus.json`: contenido editable del menu.
-- `adminMenu.html`, `adminMenu.js`, `adminMenu.css`: panel admin.
-- `serve.py`: servidor con API para editar el JSON.
-- `serve.sh`: script de arranque rapido.
+## 📁 Estructura del Proyecto
+
+```
+menuPers/
+├── index.html                 # Página principal con cards de selección
+├── indexMenuPers.html         # Menú individual pensión completa
+├── indexMenuPers.css          # Estilos del menú individual
+├── indexMenu.js               # Lógica de carga y submenús
+├── menuDiario.html            # Menú diario almuerzo/cena
+├── menuDiario.css             # Estilos del menú diario
+├── menuDiario.js              # Lógica del menú diario
+├── menus.json                 # Base de datos de platos (editable)
+├── adminMenu.html             # Panel de administración
+├── adminMenu.js               # Lógica del panel admin
+├── adminMenu.css              # Estilos del panel admin
+├── serve.py                   # Servidor HTTP con API REST
+├── serve.sh                   # Script de inicio rápido
+├── logoSuteba.jpg             # Logo institucional
+└── README.md                  # Este archivo
+```
+
+## 📊 Estructura de Datos (menus.json)
+
+```json
+{
+  "entrada": ["Plato 1", "Plato 2"],
+  "principal": [
+    {
+      "name": "Plato Principal",
+      "submenu": ["Opción A", "Opción B"]
+    }
+  ],
+  "postre": [
+    {
+      "name": "Postre",
+      "submenu_ref": "acompanamientos_postres"
+    }
+  ],
+  "acompanamientos_carnicos": ["Guarnición 1", "Guarnición 2"],
+  "salsas_pastas": ["Salsa 1", "Salsa 2"],
+  "acompanamientos_postres": ["Acompañamiento 1", "Acompañamiento 2"]
+}
+```
+
+### Patrón submenu_ref
+Los platos pueden usar `submenu_ref` para referenciar listas compartidas de acompañamientos, evitando duplicación de datos.
+
+## 🎨 Estilos y Diseño
+
+- **Tipografía principal**: Ubuntu (Liberation Sans fallback)
+- **Paleta de colores**: Gradientes morados/azules en página principal
+- **Responsive**: Adaptable a diferentes tamaños de pantalla
+- **Print-ready**: Optimizado para impresión A4 con márgenes de 15-20mm
+- **Navegación**: Links superiores para volver al menú principal
+
+## 🖨️ Impresión
+
+Para imprimir los menús:
+1. Abrir la página deseada en el navegador
+2. Usar Ctrl+P (Cmd+P en Mac) o menú Archivo → Imprimir
+3. Los estilos se ajustan automáticamente para A4
+4. Los elementos de navegación se ocultan en impresión
+
+## 🔧 Panel de Administración
+
+El panel admin requiere que `serve.py` esté en ejecución para acceder al endpoint `/api/menus`:
+
+- **GET /api/menus**: Carga el contenido actual de `menus.json`
+- **POST /api/menus**: Guarda los cambios en `menus.json`
+
+**Nota**: El servidor básico de Python (`python -m http.server`) no incluye esta API.
+
+## 📝 Historial de Cambios Recientes
+
+### Febrero 2026
+- ✅ Creada página principal con diseño de cards
+- ✅ Implementado sistema de menú diario para jubilados
+- ✅ Unificada tipografía Ubuntu en ambos sistemas
+- ✅ Mejorado estilo de navegación superior
+- ✅ Optimizadas reglas de impresión para A4
+- ✅ Integrados estilos de documentos ODT originales
+- ✅ Refactorizado JSON con patrón submenu_ref
+
+## 🤝 Contribuciones
+
+Proyecto desarrollado para SUTEBA - Unión de Trabajadores de la Educación.
+
+## 📄 Licencia
+
+Proyecto de uso interno para SUTEBA.
+
+---
+
+**Última actualización**: Febrero 2026  
+**Versión**: 2.0
