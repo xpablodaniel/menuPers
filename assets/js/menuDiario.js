@@ -26,6 +26,15 @@ function llenarSelectConOpciones(selectElement, opciones, subMenuElement, dataCo
     subMenuElement.innerHTML = '';
     const containerDiv = subMenuElement.closest('div');
 
+    if (!opciones || opciones.length === 0) {
+        const emptyOption = document.createElement('option');
+        emptyOption.textContent = '—';
+        emptyOption.value = '';
+        selectElement.appendChild(emptyOption);
+        if (containerDiv) containerDiv.style.display = 'none';
+        return;
+    }
+
     opciones.forEach(opcion => {
         const option = document.createElement('option');
         option.textContent = opcion.nombre;
@@ -84,19 +93,59 @@ function llenarSelectConOpciones(selectElement, opciones, subMenuElement, dataCo
     updateSubmenu(initialOption);
 }
 
-function inicializarMenu() {
-    const entradaSelect = document.getElementById('entrada-select');
-    const platoPrincipalSelect = document.getElementById('plato-principal-select');
-    const postreSelect = document.getElementById('postre-select');
-    const entradaSubmenuSelect = document.getElementById('entrada-submenu');
-    const platoPrincipalSubmenuSelect = document.getElementById('plato-principal-submenu');
-    const postreSubmenuSelect = document.getElementById('postre-submenu');
+function cargarMenuDelDia(menuData) {
+    // Almuerzo - usar todos los platos disponibles
+    llenarSelectConOpciones(
+        document.getElementById('almuerzo-entrada-select'),
+        menuData.entrada || [],
+        document.getElementById('almuerzo-entrada-submenu'),
+        menuData
+    );
+    llenarSelectConOpciones(
+        document.getElementById('almuerzo-principal-select'),
+        menuData.principal || [],
+        document.getElementById('almuerzo-principal-submenu'),
+        menuData
+    );
+    llenarSelectConOpciones(
+        document.getElementById('almuerzo-postre-select'),
+        menuData.postre || [],
+        document.getElementById('almuerzo-postre-submenu'),
+        menuData
+    );
 
-    cargarMenuDesdeJSON('menus.json')
+    // Cena - usar todos los platos disponibles
+    llenarSelectConOpciones(
+        document.getElementById('cena-entrada-select'),
+        menuData.entrada || [],
+        document.getElementById('cena-entrada-submenu'),
+        menuData
+    );
+    llenarSelectConOpciones(
+        document.getElementById('cena-principal-select'),
+        menuData.principal || [],
+        document.getElementById('cena-principal-submenu'),
+        menuData
+    );
+    llenarSelectConOpciones(
+        document.getElementById('cena-postre-select'),
+        menuData.postre || [],
+        document.getElementById('cena-postre-submenu'),
+        menuData
+    );
+}
+
+function inicializarMenu() {
+    const diaSelect = document.getElementById('dia-select');
+    
+    cargarMenuDesdeJSON('data/menus.json')
         .then(menuData => {
-            llenarSelectConOpciones(entradaSelect, menuData.entrada || [], entradaSubmenuSelect, menuData);
-            llenarSelectConOpciones(platoPrincipalSelect, menuData.principal || [], platoPrincipalSubmenuSelect, menuData);
-            llenarSelectConOpciones(postreSelect, menuData.postre || [], postreSubmenuSelect, menuData);
+            cargarMenuDelDia(menuData);
+            
+            // El selector de día solo cambia el día mostrado, no los platos disponibles
+            diaSelect.addEventListener('change', () => {
+                // Los platos permanecen iguales, solo cambia el contexto del día
+            });
         });
 }
 

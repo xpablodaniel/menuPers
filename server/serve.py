@@ -5,7 +5,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-MENU_FILE = BASE_DIR / "menus.json"
+MENU_FILE = BASE_DIR.parent / "data" / "menus.json"
 
 
 def is_valid_menu(payload):

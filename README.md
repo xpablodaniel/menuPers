@@ -64,7 +64,7 @@ El proyecto requiere servirse por HTTP para cargar `menus.json` correctamente.
 
 **Opción 2: Comando directo**
 ```bash
-python3 serve.py --port 5500
+python3 server/serve.py --port 5500
 ```
 
 ### Acceder a la Aplicación
@@ -77,7 +77,7 @@ python3 serve.py --port 5500
 ## 🌐 Acceso desde Otra Máquina en la Red
 
 ```bash
-python3 serve.py --host 0.0.0.0 --port 5500
+python3 server/serve.py --host 0.0.0.0 --port 5500
 ```
 
 Reemplazar `localhost` por la IP de la máquina servidor.
@@ -86,20 +86,21 @@ Reemplazar `localhost` por la IP de la máquina servidor.
 
 ```
 menuPers/
+├── assets/
+│   ├── css/                   # Estilos
+│   ├── img/                   # Logos e imagenes
+│   └── js/                    # Logica frontend
+├── data/
+│   ├── menuDiario.json        # Datos auxiliares (opcional)
+│   └── menus.json             # Base de datos de platos (editable)
+├── server/
+│   └── serve.py               # Servidor HTTP con API REST
 ├── index.html                 # Página principal con cards de selección
 ├── indexMenuPers.html         # Menú individual pensión completa
-├── indexMenuPers.css          # Estilos del menú individual
-├── indexMenu.js               # Lógica de carga y submenús
 ├── menuDiario.html            # Menú diario almuerzo/cena
-├── menuDiario.css             # Estilos del menú diario
-├── menuDiario.js              # Lógica del menú diario
-├── menus.json                 # Base de datos de platos (editable)
 ├── adminMenu.html             # Panel de administración
-├── adminMenu.js               # Lógica del panel admin
-├── adminMenu.css              # Estilos del panel admin
-├── serve.py                   # Servidor HTTP con API REST
 ├── serve.sh                   # Script de inicio rápido
-├── logoSuteba.jpg             # Logo institucional
+├── .gitignore                 # Exclusiones locales
 └── README.md                  # Este archivo
 ```
 
@@ -147,7 +148,7 @@ Para imprimir los menús:
 
 ## 🔧 Panel de Administración
 
-El panel admin requiere que `serve.py` esté en ejecución para acceder al endpoint `/api/menus`:
+El panel admin requiere que `server/serve.py` esté en ejecución para acceder al endpoint `/api/menus`:
 
 - **GET /api/menus**: Carga el contenido actual de `menus.json`
 - **POST /api/menus**: Guarda los cambios en `menus.json`
