@@ -33,7 +33,7 @@ MenuPers permite:
 - Diseño optimizado para impresión con márgenes reducidos
 
 ### Panel de Administración (adminMenu.html)
-- Carga y edición del archivo `menus.json`
+- Carga y edición del archivo `data/menus.json`
 - Interfaz visual para modificar platos disponibles
 - Guardar cambios mediante API REST
 - Gestión de submenús compartidos (acompañamientos, salsas, postres)
@@ -53,7 +53,7 @@ MenuPers permite:
 
 ## 🚀 Desarrollo Local
 
-El proyecto requiere servirse por HTTP para cargar `menus.json` correctamente.
+El proyecto requiere servirse por HTTP para cargar `data/menus.json` correctamente.
 
 ### Iniciar Servidor
 
@@ -104,7 +104,7 @@ menuPers/
 └── README.md                  # Este archivo
 ```
 
-## 📊 Estructura de Datos (menus.json)
+## 📊 Estructura de Datos (data/menus.json)
 
 ```json
 {
@@ -133,7 +133,7 @@ Los platos pueden usar `submenu_ref` para referenciar listas compartidas de acom
 ## 🎨 Estilos y Diseño
 
 - **Tipografía principal**: Ubuntu (Liberation Sans fallback)
-- **Paleta de colores**: Gradientes morados/azules en página principal
+- **Paleta de colores**: Gradientes azules en página principal
 - **Responsive**: Adaptable a diferentes tamaños de pantalla
 - **Print-ready**: Optimizado para impresión A4 con márgenes de 15-20mm
 - **Navegación**: Links superiores para volver al menú principal
@@ -150,8 +150,8 @@ Para imprimir los menús:
 
 El panel admin requiere que `server/serve.py` esté en ejecución para acceder al endpoint `/api/menus`:
 
-- **GET /api/menus**: Carga el contenido actual de `menus.json`
-- **POST /api/menus**: Guarda los cambios en `menus.json`
+- **GET /api/menus**: Carga el contenido actual de `data/menus.json`
+- **POST /api/menus**: Guarda los cambios en `data/menus.json`
 
 **Nota**: El servidor básico de Python (`python -m http.server`) no incluye esta API.
 
