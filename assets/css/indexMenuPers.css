@@ -218,12 +218,20 @@ footer {
 
 @media print {
     @page {
-        size: auto;
-        margin: 20mm;
+        size: 21cm 29.7cm;
+        margin: 15mm 15mm 10mm 15mm;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
     }
 
     body {
         background: #fff;
+        display: block;
+        min-height: auto;
     }
 
     main {

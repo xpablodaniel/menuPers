@@ -120,6 +120,14 @@
             background-color: #218838;
         }
 
+        .menu-button.tertiary {
+            background-color: #ff8c00;
+        }
+
+        .menu-button.tertiary:hover {
+            background-color: #e07c00;
+        }
+
         footer {
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
@@ -156,16 +164,23 @@
     <div class="menu-container">
         <div class="menu-card" onclick="window.location.href='indexMenuPers.html'">
             <div class="icon">🍽️</div>
-            <h2>Menú Pensión Completa</h2>
-            <p>Crea tu menú personalizado con entrada, plato principal y postre. Ideal para comidas individuales o eventos especiales.</p>
+            <h2>Menú Media Pensión</h2>
+            <p>Crea tu menú personalizado con entrada, plato principal y postre.</p>
             <a href="indexMenuPers.html" class="menu-button">Acceder</a>
         </div>
 
         <div class="menu-card" onclick="window.location.href='menuDiario.html'">
             <div class="icon">📅</div>
-            <h2>Menú Diario Jubilados</h2>
-            <p>Planifica menús de almuerzo y cena para programas de jubilados. Gestiona múltiples días con selección independiente.</p>
+            <h2>Menú Pensión Completa de Jubilados</h2>
+            <p>Planifica menús de almuerzo y cena para PPJ. Gestiona múltiples días con selección independiente.</p>
             <a href="menuDiario.html" class="menu-button secondary">Acceder</a>
+        </div>
+
+        <div class="menu-card" onclick="window.location.href='adminMenu.html'">
+            <div class="icon">🛠️</div>
+            <h2>Administrador de Menú</h2>
+            <p>Acceso al panel para editar platos, ingredientes y submenús disponibles en el sistema.</p>
+            <a href="adminMenu.html" class="menu-button tertiary">Administrar</a>
         </div>
     </div>
 

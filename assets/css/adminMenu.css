@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: "Source Sans 3", sans-serif;
+    font-family: "Ubuntu", "Liberation Sans", sans-serif;
     margin: 0;
     color: var(--ink);
     background:
@@ -51,10 +51,27 @@ header {
 }
 
 h1 {
-    font-family: "Libre Baskerville", serif;
     font-size: clamp(2rem, 2vw + 2rem, 2.6rem);
     margin: 0 0 8px;
     letter-spacing: 0.02em;
+}
+
+.top-nav {
+    width: 100%;
+    padding: 12px 20px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-link {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
 }
 
 .subtitle {

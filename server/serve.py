@@ -63,6 +63,7 @@ def main():
 
     server = ThreadingHTTPServer((args.host, args.port), MenuHandler)
     print(f"Sirviendo en http://{args.host}:{args.port}")
+    print(f"Admin disponible en http://{args.host}:{args.port}/adminMenu.html")
     server.serve_forever()
 
 

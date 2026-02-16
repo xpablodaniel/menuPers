@@ -1,6 +1,6 @@
 # MenuPers - Sistema de Gestión de Menús SUTEBA
 
-Sistema web interactivo para la gestión y visualización de menús diarios, diseñado para SUTEBA (Unión de Trabajadores de la Educación). Incluye dos módulos principales: menú individual de pensión completa y menú diario para programas de jubilados.
+Sistema web interactivo para la gestión y visualización de menús diarios, diseñado para SUTEBA (Unión de Trabajadores de la Educación). Incluye dos módulos principales: menú media pensión y menú pensión completa para jubilados.
 
 ## 🎯 Finalidad del Proyecto
 
@@ -15,21 +15,21 @@ MenuPers permite:
 
 ### Página Principal (index.html)
 - Diseño moderno con cards de selección
-- Navegación clara entre los dos sistemas de menú
+- Navegación clara entre los sistemas de menú y acceso al panel admin
 - Interfaz responsive y profesional
 
-### Menú Pensión Completa (indexMenuPers.html)
+### Menú Media Pensión (indexMenuPers.html)
 - Menú individual con 3 categorías: entrada, principal y postre
 - Submenús dinámicos según el plato seleccionado
 - Campo de detalles personalizados por categoría
 - Optimizado para impresión en A4
 - Tipografía Ubuntu con estilos serif
 
-### Menú Diario Jubilados (menuDiario.html)
+### Menú Pensión Completa de Jubilados (menuDiario.html)
 - Planificación de almuerzo y cena separados
 - Selector de días (1-4) para referencia visual
 - 6 selectores independientes (3 por comida)
-- Mismo catálogo de platos que pensión completa
+- Mismo catálogo de platos que media pensión
 - Diseño optimizado para impresión con márgenes reducidos
 
 ### Panel de Administración (adminMenu.html)
@@ -57,21 +57,21 @@ El proyecto requiere servirse por HTTP para cargar `data/menus.json` correctamen
 
 ### Iniciar Servidor
 
-**Opción 1: Script automático**
+**Opcion 1: Script automatico**
 ```bash
 ./serve.sh
 ```
 
-**Opción 2: Comando directo**
+**Opcion 2: Comando directo**
 ```bash
 python3 server/serve.py --port 5500
 ```
 
 ### Acceder a la Aplicación
 
-- **Página principal**: http://localhost:5500/index.html
-- **Menú Pensión Completa**: http://localhost:5500/indexMenuPers.html
-- **Menú Diario Jubilados**: http://localhost:5500/menuDiario.html
+- **Pagina principal**: http://localhost:5500/index.html
+- **Menu Media Pension**: http://localhost:5500/indexMenuPers.html
+- **Menu Pension Completa de Jubilados**: http://localhost:5500/menuDiario.html
 - **Panel Admin**: http://localhost:5500/adminMenu.html
 
 ## 🌐 Acceso desde Otra Máquina en la Red

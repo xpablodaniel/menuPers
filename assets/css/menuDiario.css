@@ -274,8 +274,16 @@ footer {
         margin: 15mm 15mm 10mm 15mm;
     }
 
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+    }
+
     body {
         background: #fff;
+        display: block;
+        min-height: auto;
     }
 
     .top-nav {

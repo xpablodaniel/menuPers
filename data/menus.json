@@ -1,23 +1,24 @@
 {
   "acompanamientos_carnicos": [
+    "Champignon, Crema y Blanco de Ave",
+    "a la Suiza",
+    "con Ali - Oli",
+    "con Arroz Pilaf",
+    "con Ensalada",
     "con Ensalada del Chef",
+    "con Ensaladilla",
+    "con Estofado",
+    "con Panceta y Verdeo",
+    "con Papas Bravas y Criolla",
+    "con Papas a la Crema de Verdeo",
+    "con Papas a la Provenzal",
+    "con Papas al Natural",
+    "con Puré Mixto",
     "con Puré de Batatas",
     "con Puré de Papas",
-    "con Arroz Pilaf",
-    "a la Suiza",
     "con Queso Gratinado",
-    "con Panceta y Verdeo",
-    "con Papas a la Provenzal",
-    "con Ensaladilla",
-    "con Ensalada",
-    "con Papas al Natural",
-    "Champignon, Crema y Blanco de Ave",
-    "con Puré Mixto",
-    "con Estofado",
-    "con Papas Bravas y Criolla",
-    "con Tomates Asados",
     "con Risotto de Verduras",
-    "con Papas a la Crema de Verdeo"
+    "con Tomates Asados"
   ],
   "entrada": [
     {
@@ -33,8 +34,10 @@
       "submenu": []
     },
     {
-      "nombre": "Crunch de Pollo con Ali - Oli",
-      "submenu": []
+      "nombre": "Crunch de Pollo",
+      "submenu": [
+        "con Ali - Oli"
+      ]
     },
     {
       "nombre": "Empanadas Capresse",
@@ -46,7 +49,10 @@
     },
     {
       "nombre": "Ensalada Caesar",
-      "submenu": ["con Pollo", "con Atún"]
+      "submenu": [
+        "con Pollo",
+        "con Atún"
+      ]
     },
     {
       "nombre": "Ensalada Capresse",
@@ -86,9 +92,11 @@
     },
     {
       "nombre": "Quesadillas",
-      "submenu": ["con Pico de Gallo", "con Guacamole"]
+      "submenu": [
+        "con Pico de Gallo",
+        "con Guacamole"
+      ]
     },
-    
     {
       "nombre": "Quiché de Calabaza y Muzzarella",
       "submenu": []
@@ -148,16 +156,24 @@
       "submenu_ref": "acompanamientos_carnicos"
     },
     {
-      "nombre": "Muslo al Ajillo",
-      "submenu_ref": "acompanamientos_carnicos"
-    },
-    {
       "nombre": "Muslo Braseado al Limón",
       "submenu_ref": "acompanamientos_carnicos"
     },
     {
+      "nombre": "Muslo al Ajillo",
+      "submenu_ref": "acompanamientos_carnicos"
+    },
+    {
+      "nombre": "Ñoquis a la Parisienne",
+      "submenu": []
+    },
+    {
       "nombre": "Pastel de Papa y Carne",
       "submenu": []
+    },
+    {
+      "nombre": "Pechugas Rellenas",
+      "submenu_ref": "acompanamientos_carnicos"
     },
     {
       "nombre": "Pechugas al Puerro y Queso Azul",
@@ -165,10 +181,6 @@
     },
     {
       "nombre": "Pechugas al Verdeo",
-      "submenu_ref": "acompanamientos_carnicos"
-    },
-    {
-      "nombre": "Pechugas Rellenas",
       "submenu_ref": "acompanamientos_carnicos"
     },
     {
@@ -184,19 +196,19 @@
       "submenu_ref": "salsas_pastas"
     },
     {
-      "nombre": "Suprema de Pollo",
-      "submenu_ref": "acompanamientos_carnicos"
-    },
-    {
       "nombre": "Suprema Mariland",
       "submenu_ref": "acompanamientos_carnicos"
     },
     {
-      "nombre": "Tapa de Asado Braseada",
+      "nombre": "Suprema de Pollo",
       "submenu_ref": "acompanamientos_carnicos"
     },
     {
       "nombre": "Tallarines",
+      "submenu_ref": "salsas_pastas"
+    },
+    {
+      "nombre": "Tallarines Mediterráneo",
       "submenu_ref": "salsas_pastas"
     },
     {
@@ -216,16 +228,12 @@
       "submenu_ref": "salsas_pastas"
     },
     {
-      "nombre": "Tallarines Mediterráneo",
-      "submenu_ref": "salsas_pastas"
+      "nombre": "Tapa de Asado Braseada",
+      "submenu_ref": "acompanamientos_carnicos"
     },
     {
       "nombre": "Vacío al Horno",
       "submenu_ref": "acompanamientos_carnicos"
-    },
-    {
-      "nombre": "Ñoquis a la Parisienne",
-      "submenu": []
     }
   ],
   "postre": [
@@ -235,6 +243,10 @@
     },
     {
       "nombre": "Brownie de Chocolate",
+      "submenu_ref": "acompanamientos_postres"
+    },
+    {
+      "nombre": "Budín de Pan",
       "submenu_ref": "acompanamientos_postres"
     },
     {
@@ -278,15 +290,15 @@
       "submenu_ref": "acompanamientos_postres"
     },
     {
+      "nombre": "Helado Tricolor",
+      "submenu_ref": "acompanamientos_postres"
+    },
+    {
       "nombre": "Helado de Americana",
       "submenu_ref": "acompanamientos_postres"
     },
     {
       "nombre": "Helado de Chocolate",
-      "submenu_ref": "acompanamientos_postres"
-    },
-    {
-      "nombre": "Helado Tricolor",
       "submenu_ref": "acompanamientos_postres"
     },
     {
@@ -304,17 +316,14 @@
     {
       "nombre": "Tiramisú",
       "submenu_ref": "acompanamientos_postres"
-    },
-    {
-      "nombre": "Budín de Pan",
-      "submenu_ref": "acompanamientos_postres"
     }
   ],
   "acompanamientos_postres": [
-    "con Crema y Canela",
+    " ",
+    "Mixto",
     "con Crema",
+    "con Crema y Canela",
     "con Dulce de Leche",
-    "y Dulce de Leche",
     "con Helado",
     "con Helado y Nueces Garrapiñadas",
     "con Nueces Tostadas",
@@ -322,19 +331,20 @@
     "con Salsa de Chocolate",
     "con Salsa de Frutos Rojos",
     "de Chocolate",
-    "Mixto",
     "y Crema de Arándanos",
     "y Crema de Caramelo",
-    "y Crema de Limón"
+    "y Crema de Limón",
+    "y Dulce de Leche"
   ],
   "salsas_pastas": [
+    " ",
+    "con Salsa Alexander",
     "con Salsa Bechamel",
-    "con Salsa de Tomate y Queso",
-    "con Salsa de Tomate y Carne",
-    "con Salsa de Tomate",
     "con Salsa Blanca",
-    "con Salsa Mixta",
     "con Salsa Bolognesa",
-    "con Salsa Alexander"
+    "con Salsa Mixta",
+    "con Salsa de Tomate",
+    "con Salsa de Tomate y Carne",
+    "con Salsa de Tomate y Queso"
   ]
 }
