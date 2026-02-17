@@ -22,7 +22,7 @@ body {
 
 header {
     max-width: 680px;
-    margin: 50px auto 0;
+    margin: 70px auto 0;
     text-align: center;
     padding: 0 20px;
     width: 100%;
@@ -32,7 +32,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 8px;
+    margin: 30px 0;
 }
 
 .rightIma img {
@@ -56,6 +56,7 @@ h1 {
     padding: 12px 20px;
     background: #f8f8f8;
     border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
 }
 
 .nav-link {
@@ -204,7 +205,7 @@ footer {
 @media (max-width: 700px) {
     header,
     main {
-        width: min(520px, 100% - 32px);
+        margin: 0 auto;
     }
 
     .rightIma img {
@@ -218,28 +219,39 @@ footer {
 
 @media print {
     @page {
-        size: 21cm 29.7cm;
-        margin: 15mm 15mm 10mm 15mm;
+        size: A4;
+        margin: 10mm;
     }
 
     html,
     body {
-        width: 210mm;
-        height: 297mm;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        background-color: #fff !important;
     }
 
     body {
-        background: #fff;
         display: block;
+        width: 100%;
+        max-width: none;
+        margin: 0;
         min-height: auto;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     main {
+        width: 100%;
+        max-width: none;
         padding: 0;
         gap: 16px;
     }
 
     header {
+        width: 100%;
+        max-width: none;
         margin-top: 12px;
     }
 
@@ -272,6 +284,17 @@ footer {
         text-align: center;
         text-align-last: center;
         width: 100%;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        background: transparent !important;
+        appearance: none;
+    }
+
+    section,
+    .meal-section {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .custom-input::placeholder {
@@ -284,5 +307,41 @@ footer {
 
     .print-button {
         display: none;
+    }
+
+    body.print-compact header {
+        margin-top: 6px;
+    }
+
+    body.print-compact .rightIma img {
+        height: 62px;
+    }
+
+    body.print-compact main {
+        gap: 8px;
+    }
+
+    body.print-compact h1 {
+        font-size: 2rem;
+        margin-bottom: 4px;
+    }
+
+    body.print-compact h2 {
+        font-size: 1.6rem;
+        margin: 4px 0 2px;
+    }
+
+    body.print-compact section {
+        margin: 2px 0;
+    }
+
+    body.print-compact select {
+        font-size: 1.35rem;
+        padding: 2px 4px;
+    }
+
+    body.print-compact .custom-input {
+        font-size: 1.1rem;
+        padding: 1px 4px 2px;
     }
 }

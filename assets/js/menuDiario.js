@@ -149,4 +149,41 @@ function inicializarMenu() {
         });
 }
 
+function calcularPxPorMilimetro() {
+    const medidor = document.createElement('div');
+    medidor.style.position = 'absolute';
+    medidor.style.left = '-9999px';
+    medidor.style.top = '0';
+    medidor.style.width = '10mm';
+    medidor.style.height = '100mm';
+    document.body.appendChild(medidor);
+    const pxPorMm = medidor.getBoundingClientRect().height / 100;
+    document.body.removeChild(medidor);
+    return pxPorMm > 0 ? pxPorMm : (96 / 25.4);
+}
+
+function actualizarModoCompactoImpresion() {
+    const encabezado = document.querySelector('header');
+    const contenido = document.querySelector('main');
+    if (!encabezado || !contenido) {
+        document.body.classList.remove('print-compact');
+        return;
+    }
+
+    document.body.classList.remove('print-compact');
+
+    const pxPorMm = calcularPxPorMilimetro();
+    const altoDisponibleA4 = (297 - 20) * pxPorMm;
+    const altoContenido = encabezado.getBoundingClientRect().height + contenido.getBoundingClientRect().height;
+
+    if (altoContenido > altoDisponibleA4) {
+        document.body.classList.add('print-compact');
+    }
+}
+
+window.addEventListener('beforeprint', actualizarModoCompactoImpresion);
+window.addEventListener('afterprint', () => {
+    document.body.classList.remove('print-compact');
+});
+
 window.onload = inicializarMenu;

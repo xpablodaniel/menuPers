@@ -82,6 +82,38 @@ python3 server/serve.py --host 0.0.0.0 --port 5500
 
 Reemplazar `localhost` por la IP de la máquina servidor.
 
+## 🔄 Flujo de GitHub
+
+Flujo sugerido para trabajar en equipo sin romper `main`:
+
+1. Actualizar rama principal local:
+  ```bash
+  git checkout main
+  git pull origin main
+  ```
+2. Crear rama de trabajo por cambio:
+  ```bash
+  git checkout -b feat/nombre-cambio
+  ```
+3. Hacer cambios, probar localmente y commitear:
+  ```bash
+  git add .
+  git commit -m "feat: descripcion breve"
+  ```
+4. Subir rama y abrir Pull Request:
+  ```bash
+  git push -u origin feat/nombre-cambio
+  ```
+5. Esperar CI en verde y luego mergear a `main`.
+
+## 🤖 CI (GitHub Actions)
+
+Se incluye workflow en `.github/workflows/ci.yml` que valida en cada push/PR:
+
+- Sintaxis de scripts shell (`serve.sh`, `sort-menus.sh`)
+- Sintaxis Python del servidor (`server/serve.py`)
+- Validez JSON (`data/menus.json` y `data/menuDiario.json` si existe)
+
 ## 📁 Estructura del Proyecto
 
 ```

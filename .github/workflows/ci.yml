@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate shell scripts
+        run: |
+          bash -n serve.sh
+          bash -n sort-menus.sh
+
+      - name: Validate Python server syntax
+        run: python -m py_compile server/serve.py
+
+      - name: Validate JSON files
+        run: |
+          python -m json.tool data/menus.json > /dev/null
+          if [ -f data/menuDiario.json ]; then
+            python -m json.tool data/menuDiario.json > /dev/null
+          fi
